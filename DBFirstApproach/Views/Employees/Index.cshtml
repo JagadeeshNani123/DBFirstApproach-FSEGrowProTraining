@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DBFirstApproach.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Employee Data</h1>
+
+<p>
+    <a asp-action="Create">Create new employee</a>
+</p>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>
+              Employee name
+            </th>
+            <th>
+                Email Address
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Department Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.EmpName
+            </td>
+            <td>
+               @item.EmailAddress
+            </td>
+            <td>
+                @item.PhoneNumber
+            </td>
+            <td>
+               @item.Dept.DepartmentName
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
